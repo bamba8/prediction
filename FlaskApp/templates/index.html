@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="Fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/bootstrap.min.css')}}">
+    <title>Document</title>
+</head>
+<body>
+<div class="container well-6">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <form action="{{url_for('predict')}}" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="tel" name="age" class="form-control" id="age" aria-describedby="emailHelp" placeholder="Entrer votre age">
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="sexe" class="form-label"> Sexe </label>
+                        <select name="sexe" class="form-control" id="sexe" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=0>Homme</option>
+                            <option value=1>Femme</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="tdt" class="form-label">TDT</label>
+                        <select name="tdt"  class="form-control" id="tdt" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=0>AA</option>
+                            <option value=3>DNA</option>
+                            <option value=1>ASY</option>
+                            <option value=2>AT</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="par" class="form-label">PAR</label>
+                        <input type="number" name="par" class="form-control" id="par" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="cholesterol" class="form-label">CHOLESTEROL</label>
+                        <input type="number" name="cholesterol" class="form-control" id="cholesterol" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="gaj"  class="form-label">GAJ</label>
+                        <select  class="form-control" name="gaj" id="gaj" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=1>1</option>
+                            <option value=0>0</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="ecg" class="form-label">ECG</label>
+                        <select name="ecg" class="form-control" id="ecg" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=1>Normal</option>
+                            <option value=2>ST</option>
+                            <option value=0>LVH</option>
+
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="fcmax" class="form-label">FCMAX</label>
+                        <input type="number" name="fcmax" class="form-control" id="fcmax" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="angine" class="form-label">ANGINE</label>
+                        <select class="form-control" name="angine" id="angine" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=1>Oui</option>
+                            <option value=0>Non</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="depression" class="form-label">DEPRESSION</label>
+                        <select  class="form-control" name="depression" id="depression" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=0>0</option>
+                            <option value=1>1</option>
+                            <option value=1.5>1.5</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label for="pente" class="form-label">PENTE</label>
+                        <select class="form-control" name="pente" id="pente" aria-describedby="emailHelp">
+                            <option value="">--Choisir une option--</option>
+                            <option value=2>Ascendant</option>
+                            <option value=0>Plat</option>
+                            <option value=1>Descendant</option>
+                        </select>
+                    </div>
+                    <div >
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </div>
+                </div>
+            </form>
+
+            {{ prediction_text}}
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
